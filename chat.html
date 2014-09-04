@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>FlickPost</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+    
+<body>
+       <div id="chatListPage" data-role="page" >
+		<div data-role="header" class="header" style="background-color:#2C3E3E;color:#FFFFFF;" data-position="fixed">
+			<img border="0" src="pics/favicon.png" width="35" height="35" alt="Logo, Flickpost" style="padding:5px; float:left;display:inline"/>
+			<h1>Great</h1>
+			<a href="about.html" rel="external" class="ui-btn-right ui-btn ui-icon-grid ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a>
+		</div><!-- /header -->
+	
+		<div role="main" class="ui-content chat-widget" >
+			<ul id="chartList" class="list-unstyled">			 
+			</ul>
+		</div><!-- /content -->
+		<div data-role="footer" data-position="fixed" > 
+			<div class="button-wrap">
+				<textarea id="message" cols="40" rows="8" name="textarea"  placeholder="Leave a comment"
+				class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-textinput-autogrow" style="height: 30px;"></textarea>
+			</div>
+		</div> 
+	</div><!-- /page -->
+	
+	<script src="js/chat.js"></script>
+	
+</body>
+
+</html>

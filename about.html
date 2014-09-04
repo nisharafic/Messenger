@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+ 
+ <script type="text/javascript" >
+  $(function () {
+  		
+	$('#index-content').css('margin-top',($(window).height() - $('[data-role=header]').height() - $('[data-role=footer]').height() - $('#index-content').outerHeight())/2);
+	
+  });
+ </script>
+ 
+<body>
+
+<div data-role="page" id="index" class="aboutBg">
+       
+        <div data-role="content" id="index-content">
+          <div id="test" style="text-align:center;" >
+			<p class="teaser" >FlickPost Messenger </p>
+			<p class="copyrights">Version 1.0.0</p>
+			<img border="0" src="pics/favicon.png"  alt="Logo, Flickpost" />
+			<p class="copyrights">FlickPost © 2014 </p>
+			
+		  </div>
+        </div>
+
+   </div>   
+</body>
+
+</html>
