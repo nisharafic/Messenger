@@ -1,9 +1,50 @@
 
 var users;
 
+
 $('#chatListPage').bind('pageinit', function(event) {
-	getUsersList();
+											 
+	var parameters = $(this).data("url").split("?")[1];
+	//console.log(parameters);
+    //parameter = parameters.replace("id=",""); 
+    //alert(parameter);
+	connectToHub()		
+//	getUsersList();
 });
+
+function connectToHub(){
+	
+	 var connection = $.hubConnection('http://localhost:1987/');
+            proxy = connection.createProxy('ChatHub')
+
+            connection.error(function (err) {
+                $(".client-status").text('Connection error in SignalR.\n\n: ' + err);
+            });
+			
+			proxy.on('onConnected', function (id, userName, allUsers, messages) {
+                console.log(id, userName, allUsers, messages);
+            });
+			
+			 proxy.on('onNewUserConnected', function (id, name) {
+                console.log(id, name);
+            });
+			
+            connection.start({ transport: 'longPolling' }).done(function () {
+                console.log('Connected with id: ', connection.id);
+
+                var UserId = "Nishar";
+                proxy.invoke("connect", UserId).done(function (resp) {
+                    alert('Client connected with id: ' + connection.id);
+                });
+            }).fail(function (error) {
+                // TODO: Implement client side exception handling mechanism
+                alert(error);
+            });
+
+           
+			 
+	
+}
 
 function getUsersList() {
 		
